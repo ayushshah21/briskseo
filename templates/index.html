@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+
+</head>
+<body onload="onLoad()">
+    <h1 class="title">BriskSEO</h1>
+    <br><br>
+    <div class="container">
+        <p class="instruction" id="instruction">Enter YouTube URL:</p>
+        <div class="input" id="e-rect">
+            <form action="{{url_for('index')}}" method="post" enctype = "multipart/form-data" onsubmit="return validateForm()">
+                <input type="url" class="textBox" id="textInput" name="url">
+                <input type="file" id="fileInput" class="fileInput" name="file" accept=".txt">
+                <button type="submit" id="search" class="search" onclick="">Search</button>
+            </form>
+        </div>
+        <br>
+        <div id="options" class="options">
+            <div id="urlbtn" class="url_btn" onclick="onURLClick()">URL</div>
+            <div id="txtbtn" class="txt_btn" onclick="onTXTClick()"->TXT UPLOAD</div>
+        </div>
+    </div>
+    <!--<div class="centered">
+        <form action="{{url_for('index')}}" method="post">
+            <input type="text" id="inputBox" name="inputBox" class="inputTags"><br><br>
+            <button type="submit" class="submit_btn">Find SubReddits</button>
+        </form>
+        
+    </div>-->
+</body>
+</html>

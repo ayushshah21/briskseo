@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript">
+        var links = {{data|tojson}}
+    </script>
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+</head>
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+    .blurredContent{
+        -webkit-filter: blur(8px);
+        background-color: rgba(255, 255, 255, 50);
+        cursor: pointer;
+    }
+    .blurredContent:hover{
+        background-color: rgba(200, 200, 200, 50);
+    }
+    .nonBlur{
+        -webkit-transition: -webkit-filter .20s;
+    }
+    .linkBox:hover{
+        background-color: rgba(95, 123, 252, 15);
+        opacity: 40%;
+    }
+    </style>
+<body onload="onLinksLoad()">
+    <table style="width:100%" id="table">
+        <tr>
+            <th>Reddit</th>
+            <th>Relevancy Points</th>
+        </tr>
+      </table>
+</body>
+</html>
